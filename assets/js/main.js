@@ -48,3 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     year.textContent = new Date().getFullYear();
   }
 });
+
+const dropdown = document.querySelector(".nav-dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+
+toggle.addEventListener("click", () => {
+    if (window.innerWidth <= 992) {
+        dropdown.classList.toggle("active");
+    }
+});

@@ -15,3 +15,179 @@
     display: flex;
   }
 }
+
+/* ==========================================================
+   MOBILE NAVBAR DROPDOWN
+========================================================== */
+
+@media (max-width: 992px) {
+
+  .nav-dropdown {
+    width: 100%;
+    display: block;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 0;
+
+    background: transparent;
+    border: none;
+
+    color: inherit;
+    font: inherit;
+
+    cursor: pointer;
+  }
+
+  .dropdown-toggle i {
+    transition: transform .3s ease;
+  }
+
+  .dropdown-menu {
+
+    position: static;
+
+    min-width: 100%;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    border-radius: 0;
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    pointer-events: auto;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height .35s ease;
+  }
+
+  .dropdown-menu a {
+
+    padding: .85rem 1rem .85rem 1.5rem;
+
+    font-size: .95rem;
+
+    border-left: 2px solid rgba(255,255,255,.08);
+  }
+
+  .nav-dropdown.active .dropdown-menu {
+    max-height: 500px;
+  }
+
+  .nav-dropdown.active .dropdown-toggle i {
+    transform: rotate(180deg);
+  }
+
+}
+
+/*==========================================================
+  INTERNET HIGHLIGHT
+==========================================================*/
+
+@media (max-width: 992px){
+
+    .internet-panel{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .internet-divider{
+
+        display:none;
+
+    }
+
+    .internet-item{
+
+        padding:40px 24px;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .internet-item:last-child{
+
+        border-bottom:none;
+
+    }
+
+}
+
+/*==========================================================
+  SUBSCRIBE STEPS
+==========================================================*/
+
+@media (max-width: 992px){
+
+  .subscribe-steps{
+
+      padding:80px 0;
+
+  }
+
+  .steps-grid{
+
+      grid-template-columns:1fr;
+
+      gap:24px;
+
+  }
+
+  .step-card{
+
+      padding:36px 28px;
+
+  }
+
+  .step-card p{
+
+      min-height:auto;
+
+  }
+
+  .step-number{
+
+      font-size:2.5rem;
+
+  }
+
+}
+
+@media (max-width:576px){
+
+  .step-card{
+
+      text-align:center;
+
+  }
+
+  .step-card i{
+
+      margin-left:auto;
+      margin-right:auto;
+
+  }
+
+  .step-card a{
+
+      justify-content:center;
+
+  }
+
+}
