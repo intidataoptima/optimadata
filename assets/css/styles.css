@@ -22,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+main section[id] {
+  scroll-margin-top: 96px;
+}
+
 body {
   margin: 0;
   min-width: 320px;
