@@ -1476,6 +1476,87 @@ main > section.section-shell:not(.hero):not(.profile-grid):not(.contact-section)
   line-height: 1.7;
 }
 
+.speedtest-page {
+  display: grid;
+  gap: 28px;
+}
+
+.speedtest-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.speedtest-card {
+  width: min(920px, 100%);
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.24);
+}
+
+.speedtest-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.speedtest-card-head h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.5vw, 26px);
+}
+
+.speedtest-embed {
+  padding: 12px;
+  border: 1px solid rgba(122, 244, 255, 0.16);
+  border-radius: 20px;
+  background: rgba(2, 8, 16, 0.7);
+}
+
+.speedtest-embed-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--silver);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.speedtest-embed-head a,
+.speedtest-support a {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.speedtest-frame-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.speedtest-frame-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 16px;
+}
+
+.speedtest-support {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 .coverage-card {
   display: grid;
   gap: 14px;
