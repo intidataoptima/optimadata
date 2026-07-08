@@ -100,7 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showSlide = (index) => {
       heroSlides.forEach((slide, idx) => {
-        slide.classList.toggle('is-active', idx === index);
+        const isActive = idx === index;
+        slide.classList.toggle('is-active', isActive);
+        slide.querySelectorAll('.reveal').forEach((el) => {
+          el.classList.toggle('is-visible', isActive);
+        });
       });
     };
 
@@ -127,17 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeHeroSlide = heroFullSlides.findIndex((slide) => slide.classList.contains('is-active'));
     if (activeHeroSlide === -1) activeHeroSlide = 0;
 
-    const showHeroSlide = (index) => {
-      heroFullSlides.forEach((slide, idx) => {
-        slide.classList.toggle('is-active', idx === index);
-      });
-    };
+    
 
     const moveNextHero = () => {
       activeHeroSlide = (activeHeroSlide + 1) % heroFullSlides.length;
       showHeroSlide(activeHeroSlide);
     };
 
+    const movePrevHero = () => {
+      activeHeroSlide = (activeHeroSlide - 1 + heroFullSlides.length) % heroFullSlides.length;
+      showHeroSlide(activeHeroSlide);
+    };
+
+    // restore autoplay for hero slider
     let heroTimer = setInterval(moveNextHero, 5000);
 
     heroSlider.addEventListener('mouseenter', () => {
@@ -147,6 +153,40 @@ document.addEventListener('DOMContentLoaded', () => {
     heroSlider.addEventListener('mouseleave', () => {
       heroTimer = setInterval(moveNextHero, 5000);
     });
+
+    // create a dedicated promo panel shell and sync it with hero slides
+    const promoShellExists = document.querySelector('.promo-shell');
+    let promoShell = promoShellExists;
+    const panelContents = heroFullSlides.map((slide) => {
+      const panel = slide.querySelector('.hero-panel');
+      return panel ? panel.innerHTML : '';
+    });
+
+    if (!promoShell) {
+      promoShell = document.createElement('div');
+      promoShell.className = 'promo-shell';
+      // place promo shell inside heroSlider so it aligns with layout
+      heroSlider.appendChild(promoShell);
+    }
+
+    const showPromo = (index) => {
+      promoShell.innerHTML = panelContents[index] || '';
+    };
+
+    // initialize promo with current active slide
+    showPromo(activeHeroSlide);
+
+    // redefine showHeroSlide to also update promo shell
+    const showHeroSlide = (index) => {
+      heroFullSlides.forEach((slide, idx) => {
+        const isActive = idx === index;
+        slide.classList.toggle('is-active', isActive);
+        slide.querySelectorAll('.reveal').forEach((el) => {
+          el.classList.toggle('is-visible', isActive);
+        });
+      });
+      showPromo(index);
+    };
   }
 
   const year = document.getElementById('year');
