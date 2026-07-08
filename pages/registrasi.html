@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrasi Pelanggan | PT. Inti Data Optima</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="section-shell header-inner">
+        <a class="brand" href="../index.html" aria-label="PT. Inti Data Optima">
+          <img src="../assets/logo-dark.png" alt="PT. Inti Data Optima">
+        </a>
+      </div>
+    </header>
+
+    <main class="section-shell" style="padding:40px 0;">
+      <section class="contact-section">
+        <div class="form-heading">
+          <h1>Registrasi Pelanggan Baru</h1>
+          <p>Silakan isi data pendaftaran berikut untuk layanan internet PT Inti Data Optima. Data Anda akan disiapkan secara profesional dan dikirim langsung ke tim pemasangan melalui WhatsApp resmi.</p>
+        </div>
+
+        <div class="form-wizard" style="max-width:900px;">
+          <div class="form-steps-indicator">
+            <button type="button" class="step-dot is-active" data-step="1" aria-label="Langkah 1">1</button>
+            <button type="button" class="step-dot" data-step="2" aria-label="Langkah 2">2</button>
+            <button type="button" class="step-dot" data-step="3" aria-label="Langkah 3">3</button>
+          </div>
+
+          <form id="registrasiForm" class="form-grid" novalidate>
+            <div class="form-step" data-step="1">
+              <div class="field-icon">
+                <label class="form-label bi-person-fill" >Nama Lengkap (sesuai KTP) *</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="nama" required>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-whatsapp" >No WA aktif *</label>
+                <span class="input-icon bi"></span>
+                <input type="tel" name="wa" placeholder="6285..." required>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-envelope-fill" >Email</label>
+                <span class="input-icon bi"></span>
+                <input type="email" name="email">
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-geo-alt-fill" >Wilayah *</label>
+                <span class="input-icon bi"></span>
+                <select name="wilayah" required>
+                  <option value="" disabled selected>Pilih wilayah</option>
+                  <optgroup label="Kota Kediri">
+                    <option value="Ngronggo">Ngronggo</option>
+                    <option value="Pesantren">Pesantren</option>
+                    <option value="Bence">Bence</option>
+                    <option value="Banaran">Banaran</option>
+                    <option value="Lainnya (Kota)">Lainnya (Kota)</option>
+                  </optgroup>
+                  <optgroup label="Kabupaten">
+                    <option value="Pule">Pule</option>
+                    <option value="Blabak">Blabak</option>
+                    <option value="Silir">Silir</option>
+                    <option value="Gande">Gande</option>
+                    <option value="Lainnya (Kabupaten)">Lainnya (Kabupaten)</option>
+                  </optgroup>
+                  <optgroup label="Luar Kota">
+                    <option value="Lainnya">Lainnya</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-speedometer2" >Paket yang dipilih *</label>
+                <span class="input-icon bi"></span>
+                <select name="paket" required>
+                  <option value="15 Mbps">15 Mbps</option>
+                  <option value="30 Mbps">30 Mbps</option>
+                  <option value="50 Mbps">50 Mbps</option>
+                  <option value="100 Mbps">100 Mbps</option>
+                </select>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-shield-lock-fill" >Sharelock</label>
+                <span class="input-icon bi"></span>
+                <select name="sharelock">
+                  <option value="Tidak">Tidak</option>
+                  <option value="Ya">Ya</option>
+                </select>
+              </div>
+
+              <div class="field-icon full">
+                <label class="form-label bi-person-badge" >Nama pemasang sesuai KTP</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="nama_pemasang">
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2" style="display:none;">
+              <div class="field-icon full">
+                <label class="form-label bi-house-fill" >Alamat Lengkap - Jl *</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="jl" required>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-grid-1x2-fill" >RT</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="rt">
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-grid-1x2-fill" >RW</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="rw">
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-map-fill" >Kecamatan *</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="kecamatan" required>
+              </div>
+
+              <div class="field-icon full">
+                <label class="form-label bi-card-image" >Foto KTP (NIK blur) — upload opsional</label>
+                <span class="input-icon bi"></span>
+                <input type="file" id="foto_ktp" name="foto_ktp" accept="image/*">
+                <div class="file-info" id="fileInfo">Maksimal 2 MB, JPEG/PNG.</div>
+                <div id="previewContainer">
+                  <img id="previewImg" alt="Preview Foto KTP">
+                </div>
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-wifi" >Nama WiFi (opsional)</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="ssid">
+              </div>
+
+              <div class="field-icon">
+                <label class="form-label bi-lock-fill" >Password WiFi (opsional, max 8)</label>
+                <span class="input-icon bi"></span>
+                <input type="text" name="wifipass" maxlength="8">
+              </div>
+            </div>
+
+            <div class="form-step full" data-step="3" style="display:none;">
+              <div class="message-box">
+                <p>Dengan menekan tombol di bawah, Anda menyampaikan minat berlangganan melalui website resmi PT Inti Data Optima. Data ini akan dikonfirmasi oleh tim kami melalui WhatsApp.</p>
+                <p>Pastikan NIK pada foto KTP diburamkan sebelum dikirim di WhatsApp.</p>
+              </div>
+              <div class="review-summary" id="reviewSummary">
+                <p><strong>Ringkasan Pendaftaran</strong></p>
+                <p>Isi formulir terlebih dahulu, lalu lanjut ke review untuk memastikan data sudah benar.</p>
+              </div>
+            </div>
+
+            <div class="wizard-controls full">
+              <button type="button" class="btn btn-ghost" id="prevStep">Kembali</button>
+              <button type="button" class="btn btn-ghost" id="nextStep">Lanjutkan</button>
+              <button class="btn btn-primary" type="submit" id="submitForm" style="display:none;">Kirim ke WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/registrasi.js"></script>
+  </body>
+</html>

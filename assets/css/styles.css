@@ -131,6 +131,209 @@ html {
   max-width: 420px;
 }
 
+/* registration preview + toast */
+.toast-message {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  bottom: 32px;
+  background: rgba(2,8,16,0.9);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 240ms ease, transform 240ms ease;
+  z-index: 9999;
+}
+.toast-message.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+#previewImg { max-width: 100%; height: auto; display: block; border-radius: 14px; }
+
+/* Registration form styles */
+.form-heading {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 24px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+.form-heading h1 {
+  margin-bottom: 12px;
+  font-size: clamp(32px, 4vw, 42px);
+}
+.form-heading p {
+  margin: 0;
+  color: var(--silver);
+  line-height: 1.75;
+}
+
+.form-wizard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 26px;
+  padding: 28px;
+}
+
+.form-steps-indicator {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.step-dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.step-dot:hover {
+  transform: translateY(-1px);
+  border-color: rgba(8,216,255,0.28);
+}
+.step-dot.is-active {
+  background: linear-gradient(135deg, var(--green), var(--cyan));
+  color: #031015;
+  border-color: transparent;
+}
+
+.form-step {
+  display: none !important;
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+}
+
+.form-step.is-active,
+.form-step[style*="display: grid"] {
+  display: grid !important;
+}
+
+.form-step .field-icon {
+  width: 100%;
+}
+
+.form-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.review-summary {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: var(--silver);
+}
+.review-summary ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--text);
+}
+.review-summary li {
+  margin-bottom: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.form-grid > div { display:flex; flex-direction:column; }
+.form-grid label { font-weight:700; margin-bottom:10px; color:var(--text); }
+.field-icon {
+  position: relative;
+}
+.field-icon .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cyan);
+  font-size: 18px;
+}
+.field-icon input,
+.field-icon select,
+.field-icon textarea {
+  padding-left: 44px;
+}
+.form-grid input[type="text"], .form-grid input[type="tel"], .form-grid input[type="email"], .form-grid input[type="file"], .form-grid select, .form-grid textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: var(--text);
+  outline: none;
+  min-height: 48px;
+}
+.form-grid select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C4D9E5' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+}
+.form-grid input[type="file"] {
+  padding-left: 16px;
+}
+.form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { box-shadow: 0 14px 30px rgba(8,216,255,0.12); border-color: rgba(8,216,255,0.3); }
+.form-grid .full { grid-column: 1 / -1; }
+.message-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 22px;
+  color: var(--silver);
+}
+.file-info {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+#previewContainer {
+  margin-top: 14px;
+}
+.wizard-controls {
+  grid-column: 1 / -1;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: stretch;
+  align-items: stretch;
+  margin-top: 8px;
+}
+.wizard-controls .btn {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .field-icon input,
+  .field-icon select,
+  .field-icon textarea {
+    padding-left: 44px;
+  }
+}
+
+@media (max-width: 720px) {
+  .form-wizard {
+    padding: 18px;
+  }
+  .step-dot {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 /* dedicated promo shell shown outside slides and synced with hero */
 .promo-shell {
   position: absolute;
