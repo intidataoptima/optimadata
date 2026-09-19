@@ -3,369 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Katalog modem ZTE untuk tutorial mengganti nama WiFi dan password router."
-    />
+    <meta name="description" content="Katalog modem ZTE untuk tutorial mengganti nama WiFi dan password router." />
     <title>Katalog ZTE | Setting Router</title>
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #071018;
-        --panel: rgba(255, 255, 255, 0.07);
-        --panel-strong: rgba(255, 255, 255, 0.12);
-        --line: rgba(255, 255, 255, 0.14);
-        --text: #f7fbff;
-        --muted: #b9c9d8;
-        --soft: #7f98ac;
-        --blue: #2f80ed;
-        --cyan: #22c7a9;
-        --shadow: 0 20px 70px rgba(0, 0, 0, 0.34);
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        min-height: 100vh;
-        background:
-          radial-gradient(circle at 14% 0%, rgba(34, 199, 169, 0.18), transparent 28rem),
-          radial-gradient(circle at 88% 6%, rgba(47, 128, 237, 0.24), transparent 30rem),
-          var(--bg);
-        color: var(--text);
-        font-family: "Segoe UI", Arial, sans-serif;
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      button,
-      input {
-        font: inherit;
-      }
-
-      .site-header {
-        padding: 22px clamp(18px, 4vw, 54px) 34px;
-      }
-
-      .topbar {
-        align-items: center;
-        display: flex;
-        gap: 18px;
-        justify-content: space-between;
-        margin: 0 auto;
-        max-width: 1180px;
-      }
-
-      .brand,
-      .back-link {
-        align-items: center;
-        display: inline-flex;
-      }
-
-      .brand {
-        gap: 12px;
-      }
-
-      .brand-mark {
-        align-items: center;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        border-radius: 8px;
-        display: inline-flex;
-        font-weight: 800;
-        height: 42px;
-        justify-content: center;
-        width: 42px;
-      }
-
-      .brand strong,
-      .brand small {
-        display: block;
-      }
-
-      .brand small,
-      .eyebrow,
-      .back-link {
-        color: var(--muted);
-      }
-
-      .back-link {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        gap: 8px;
-        padding: 9px 12px;
-      }
-
-      .back-link:hover {
-        background: var(--panel);
-        color: var(--text);
-      }
-
-      .hero {
-        display: grid;
-        gap: 28px;
-        grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
-        margin: 58px auto 0;
-        max-width: 1180px;
-      }
-
-      .eyebrow {
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.8rem, 7vw, 5.8rem);
-        line-height: 0.96;
-        margin: 14px 0 18px;
-      }
-
-      .hero p {
-        color: var(--muted);
-        font-size: clamp(1rem, 2vw, 1.18rem);
-        max-width: 700px;
-      }
-
-      .hero-card {
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        box-shadow: var(--shadow);
-        padding: 18px;
-      }
-
-      .hero-card img {
-        aspect-ratio: 4 / 3;
-        background: #fff;
-        border-radius: 8px;
-        display: block;
-        object-fit: contain;
-        padding: 16px;
-        width: 100%;
-      }
-
-      .hero-card strong {
-        display: block;
-        font-size: 1.25rem;
-        margin-top: 14px;
-      }
-
-      .container {
-        margin: 0 auto;
-        max-width: 1180px;
-        padding: 18px clamp(18px, 4vw, 54px) 0;
-      }
-
-      .toolbar {
-        display: grid;
-        gap: 14px;
-        grid-template-columns: minmax(0, 1fr) auto;
-        margin: 26px 0 20px;
-      }
-
-      .search input {
-        background: rgba(255, 255, 255, 0.09);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        color: #fff;
-        outline: none;
-        padding: 16px 18px;
-        width: 100%;
-      }
-
-      .search input:focus {
-        border-color: rgba(34, 199, 169, 0.72);
-        box-shadow: 0 0 0 4px rgba(34, 199, 169, 0.12);
-      }
-
-      .count-badge {
-        align-items: center;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        color: var(--muted);
-        display: inline-flex;
-        font-weight: 800;
-        justify-content: center;
-        min-height: 54px;
-        padding: 0 16px;
-        white-space: nowrap;
-      }
-
-      .cards {
-        display: grid;
-        gap: 18px;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .card {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .card[hidden] {
-        display: none;
-      }
-
-      .card img {
-        aspect-ratio: 4 / 3;
-        background: #fff;
-        display: block;
-        object-fit: contain;
-        padding: 14px;
-        width: 100%;
-      }
-
-      .content {
-        padding: 17px;
-      }
-
-      .pill {
-        background: rgba(34, 199, 169, 0.16);
-        border-radius: 999px;
-        color: #8ff3de;
-        display: inline-flex;
-        font-size: 0.76rem;
-        font-weight: 800;
-        padding: 5px 9px;
-      }
-
-      .content h2 {
-        font-size: 1.35rem;
-        margin: 12px 0 4px;
-      }
-
-      .content p {
-        color: var(--muted);
-        min-height: 52px;
-      }
-
-      .info-list {
-        border-top: 1px solid var(--line);
-        display: grid;
-        gap: 8px;
-        margin-top: 14px;
-        padding-top: 14px;
-      }
-
-      .info-list span {
-        color: var(--soft);
-        display: block;
-        font-size: 0.84rem;
-      }
-
-      .btn {
-        align-items: center;
-        background: linear-gradient(135deg, var(--blue), var(--cyan));
-        border-radius: 8px;
-        color: #fff;
-        display: inline-flex;
-        font-weight: 800;
-        justify-content: center;
-        margin-top: 18px;
-        min-height: 44px;
-        padding: 11px 16px;
-        width: 100%;
-      }
-
-      .empty-state {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        color: var(--muted);
-        display: none;
-        margin-top: 18px;
-        padding: 18px;
-      }
-
-      .footer {
-        border-top: 1px solid var(--line);
-        color: var(--soft);
-        margin-top: 58px;
-        padding: 28px 18px 34px;
-        text-align: center;
-      }
-
-      @media (max-width: 980px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .cards {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 640px) {
-        .topbar,
-        .toolbar {
-          align-items: stretch;
-          grid-template-columns: 1fr;
-        }
-
-        .topbar {
-          flex-direction: column;
-        }
-
-        .back-link {
-          justify-content: center;
-          width: 100%;
-        }
-
-        .hero {
-          margin-top: 38px;
-        }
-
-        .cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="topbar" aria-label="Navigasi katalog ZTE">
-        <a class="brand" href="index.html" aria-label="Setting Router Home">
-          <span class="brand-mark">SR</span>
-          <span>
-            <strong>Setting Router</strong>
-            <small>Katalog ZTE</small>
-          </span>
-        </a>
-        <a class="back-link" href="index.html">Kembali ke Home</a>
-      </nav>
+    <div class="topbar-strip">
+      <div class="section-shell topbar-inner">
+        <span><i class="bi bi-geo-alt"></i> Kediri, Jawa Timur</span>
+        <span><i class="bi bi-envelope"></i> official@optimadata.net</span>
+        <span><i class="bi bi-headset"></i> 0852-3456-7504</span>
+      </div>
+    </div>
 
-      <section class="hero">
-        <div>
-          <p class="eyebrow">Katalog modem</p>
-          <h1>Modem ZTE</h1>
-          <p>
-            Pilih tipe modem ZTE pelanggan untuk melihat tutorial mengganti
-            nama WiFi dan password. Gunakan pencarian jika tipe modem sudah
-            diketahui.
-          </p>
-        </div>
-        <div class="hero-card">
-          <img src="images/ztef670l.png" alt="Modem ZTE F670L" />
-          <strong>F609, F672Y, F660, F670L</strong>
-          <p>Daftar tutorial aktif di help center.</p>
-        </div>
-      </section>
+    <header class="site-header">
+      <div class="section-shell header-inner">
+        <a class="brand" href="../../index.html" aria-label="PT. Inti Data Optima">
+          <img src="../../assets/logo-dark.png" alt="PT. Inti Data Optima" />
+        </a>
+        <nav class="nav-links" aria-label="Navigasi katalog ZTE">
+          <a href="index.html">Home</a>
+          <a href="#catalog">Katalog</a>
+          <a href="#bantuan">Bantuan</a>
+          <a class="nav-cta" href="https://wa.me/6285234567504">WhatsApp</a>
+        </nav>
+      </div>
     </header>
 
+    <section class="hero-section">
+      <div class="hero-copy">
+        <p class="eyebrow">Katalog modem</p>
+        <h1>Modem ZTE</h1>
+        <p class="hero-text">
+          Pilih tipe modem ZTE pelanggan untuk melihat tutorial mengganti nama WiFi dan password. Gunakan pencarian jika tipe modem sudah diketahui.
+        </p>
+      </div>
+      <div class="hero-panel">
+        <div class="router-preview">
+          <img src="images/ztef670l.png" alt="Modem ZTE F670L" />
+        </div>
+      </div>
+    </section>
+
     <main class="container">
-      <div class="toolbar">
-        <div class="search">
+      <section class="search-section" id="catalog">
+        <div class="section-heading">
+          <p class="eyebrow">Cari cepat</p>
+          <h2>Temukan tutorial modem ZTE Anda</h2>
+        </div>
+        <div class="searchbox">
           <input
             type="search"
             id="search"
@@ -373,83 +63,81 @@
             autocomplete="off"
           />
         </div>
-        <div class="count-badge" id="countBadge">4 Tutorial</div>
-      </div>
-
-      <section class="cards" aria-label="Daftar modem ZTE">
-        <article class="card" data-name="zte f609 gpon wifi rumah">
-          <img src="images/ztef609.png" alt="ZTE F609" />
-          <div class="content">
-            <span class="pill">Tutorial tersedia</span>
-            <h2>ZTE F609</h2>
-            <p>Modem GPON populer untuk WiFi rumah dan pelanggan rumahan.</p>
-            <div class="info-list">
-              <div><span>IP Login</span>192.168.1.1</div>
-              <div><span>User default</span>user / @admin123</div>
-            </div>
-            <a class="btn" href="zte-f609.html">Lihat Tutorial</a>
-          </div>
-        </article>
-
-        <article class="card" data-name="zte f672y gpon ont">
-          <img
-            src="https://www.telecomate.com/wp-content/uploads/2019/12/zte-f672y.jpg"
-            alt="ZTE F672Y"
-          />
-          <div class="content">
-            <span class="pill">Tutorial tersedia</span>
-            <h2>ZTE F672Y</h2>
-            <p>ONT ZTE untuk panduan login dan perubahan identitas WiFi.</p>
-            <div class="info-list">
-              <div><span>IP Login</span>192.168.1.1</div>
-              <div><span>User default</span>user / @admin123</div>
-            </div>
-            <a class="btn" href="zte-f672y.html">Lihat Tutorial</a>
-          </div>
-        </article>
-
-        <article class="card" data-name="zte f660 ont wifi telepon">
-          <img src="images/ztef660.png" alt="ZTE F660" />
-          <div class="content">
-            <span class="pill">Tutorial tersedia</span>
-            <h2>ZTE F660</h2>
-            <p>ONT ZTE dengan fitur WiFi dan telepon untuk pelanggan fiber.</p>
-            <div class="info-list">
-              <div><span>IP Login</span>192.168.1.1</div>
-              <div><span>User default</span>user / @admin123</div>
-            </div>
-            <a class="btn" href="zte-f660.html">Lihat Tutorial</a>
-          </div>
-        </article>
-
-        <article class="card" data-name="zte f670l dual band 2.4ghz 5ghz">
-          <img src="images/ztef670l.png" alt="ZTE F670L" />
-          <div class="content">
-            <span class="pill">Tutorial tersedia</span>
-            <h2>ZTE F670L</h2>
-            <p>Router dual band 2.4GHz dan 5GHz untuk kebutuhan rumah.</p>
-            <div class="info-list">
-              <div><span>IP Login</span>192.168.1.1</div>
-              <div><span>User default</span>user / @admin123</div>
-            </div>
-            <a class="btn" href="zte670l.html">Lihat Tutorial</a>
-          </div>
-        </article>
+        <div class="results" id="results" aria-live="polite"></div>
       </section>
 
-      <div class="empty-state" id="emptyState">
-        Tipe ZTE belum ditemukan. Coba kata kunci lain atau hubungi CS melalui
-        tombol WhatsApp.
-      </div>
+      <section class="catalog-section" aria-label="Daftar modem ZTE">
+        <div class="cards">
+          <article class="card" data-name="zte f609 gpon wifi rumah">
+            <img src="images/ztef609.png" alt="ZTE F609" />
+            <div class="content">
+              <span class="pill">Tutorial tersedia</span>
+              <h3>ZTE F609</h3>
+              <p>Modem GPON populer untuk WiFi rumah dan pelanggan rumahan.</p>
+              <a class="btn card-btn" href="zte-f609.html">Lihat Tutorial</a>
+            </div>
+          </article>
+
+          <article class="card" data-name="zte f672y gpon ont">
+            <img src="https://www.telecomate.com/wp-content/uploads/2019/12/zte-f672y.jpg" alt="ZTE F672Y" />
+            <div class="content">
+              <span class="pill">Tutorial tersedia</span>
+              <h3>ZTE F672Y</h3>
+              <p>ONT ZTE untuk panduan login dan perubahan identitas WiFi.</p>
+              <a class="btn card-btn" href="zte-f672y.html">Lihat Tutorial</a>
+            </div>
+          </article>
+
+          <article class="card" data-name="zte f660 ont wifi telepon">
+            <img src="images/ztef660.png" alt="ZTE F660" />
+            <div class="content">
+              <span class="pill">Tutorial tersedia</span>
+              <h3>ZTE F660</h3>
+              <p>ONT ZTE dengan fitur WiFi dan telepon untuk pelanggan fiber.</p>
+              <a class="btn card-btn" href="zte-f660.html">Lihat Tutorial</a>
+            </div>
+          </article>
+
+          <article class="card" data-name="zte f670l dual band 2.4ghz 5ghz">
+            <img src="images/ztef670l.png" alt="ZTE F670L" />
+            <div class="content">
+              <span class="pill">Tutorial tersedia</span>
+              <h3>ZTE F670L</h3>
+              <p>Router dual band 2.4GHz dan 5GHz untuk kebutuhan rumah.</p>
+              <a class="btn card-btn" href="zte670l.html">Lihat Tutorial</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="empty-state" id="emptyState">Tipe ZTE belum ditemukan. Coba kata kunci lain atau hubungi CS melalui WhatsApp.</div>
+
+      <section class="help-section" id="bantuan">
+        <div>
+          <p class="eyebrow">Butuh bantuan?</p>
+          <h2>CS siap bantu cek tipe modem pelanggan</h2>
+          <p>Jika pelanggan belum tahu tipe router yang dipakai, arahkan untuk menghubungi CS melalui tombol WhatsApp di pojok kanan bawah.</p>
+        </div>
+        <a class="btn primary" href="https://wa.me/6285234567504?text=halo%20admin%2C%20saya%20butuh%20bantuan%20tatacara%20ganti%20nama%2Fpassword%20wifi%2C%20router%20apakah%20yang%20saya%20pakai%20sekarang%3F" target="_blank" rel="noopener">Chat Customer Service</a>
+      </section>
     </main>
 
-    <footer class="footer">Copyright 2026 Setting Router by DeltaNet</footer>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="../../assets/logo-dark.png" alt="PT. Inti Data Optima" />
+        <p>Setting Router Official by PT. Inti Data Optima.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../../index.html" target="_blank" rel="noopener">Official Website</a>
+        <a href="https://wa.me/6285234567504" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="../../coverage-area.html" target="_blank" rel="noopener">Coverage Area</a>
+      </div>
+    </footer>
 
     <script>
-      const searchInput = document.getElementById("search");
-      const cards = Array.from(document.querySelectorAll(".card"));
-      const countBadge = document.getElementById("countBadge");
-      const emptyState = document.getElementById("emptyState");
+      const searchInput = document.getElementById('search');
+      const cards = Array.from(document.querySelectorAll('.card'));
+      const emptyState = document.getElementById('emptyState');
 
       function updateCatalog() {
         const query = searchInput.value.trim().toLowerCase();
@@ -461,11 +149,10 @@
           if (match) visibleCount += 1;
         });
 
-        countBadge.textContent = `${visibleCount} Tutorial`;
-        emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
       }
 
-      searchInput.addEventListener("input", updateCatalog);
+      searchInput.addEventListener('input', updateCatalog);
     </script>
     <script src="floating-wa.js"></script>
   </body>

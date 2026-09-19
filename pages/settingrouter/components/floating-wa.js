@@ -1,6 +1,6 @@
 // Floating WhatsApp Button
 const waBtn = document.createElement('a');
-waBtn.href = 'https://wa.me/6280000000000';
+waBtn.href = 'https://wa.me/6285234567504';
 waBtn.target = '_blank';
 waBtn.style.position = 'fixed';
 waBtn.style.bottom = '20px';

@@ -1885,7 +1885,7 @@ main > section.section-shell:not(.hero):not(.profile-grid):not(.contact-section)
 .pricing-card .price {
   margin: 0;
   color: var(--text);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 800;
 }
 
