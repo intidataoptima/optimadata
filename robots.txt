@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Mencegah penjelajahan dokumen internal jika ada
+Disallow: /docs/
+
+# Lokasi File Sitemap untuk Google Search Console
+Sitemap: https://optimadata.net/sitemap.xml
