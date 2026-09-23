@@ -175,6 +175,18 @@ html {
   padding: 28px;
 }
 
+/* Keep form single-column to ensure inputs stack under labels */
+@media (min-width: 980px) {
+  .form-wizard { padding: 32px; }
+  .form-grid { grid-template-columns: 1fr; gap: 18px; }
+  .form-grid .full { grid-column: 1 / -1; }
+  .field-icon { width: 100%; }
+  .wizard-controls .btn { flex: 1 1 100%; min-width: 0; }
+  .form-heading { display: flex; flex-direction: column; gap: 12px; }
+  .form-heading-main { flex: none; }
+  .form-heading-action { flex: none; }
+}
+
 .form-steps-indicator {
   display: flex;
   gap: 10px;
@@ -244,7 +256,7 @@ html {
   align-items: stretch;
 }
 .form-grid > div { display:flex; flex-direction:column; }
-.form-grid label { font-weight:700; margin-bottom:10px; color:var(--text); }
+.form-grid label { display: block; font-weight:700; margin-bottom:10px; color:var(--text); }
 .field-icon {
   position: relative;
 }
@@ -260,6 +272,8 @@ html {
 .field-icon select,
 .field-icon textarea {
   padding-left: 44px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .form-grid input[type="text"], .form-grid input[type="tel"], .form-grid input[type="email"], .form-grid input[type="file"], .form-grid select, .form-grid textarea {
   background: rgba(255,255,255,0.04);
@@ -279,6 +293,22 @@ html {
   background-position: right 14px center;
   background-size: 12px 8px;
 }
+
+/* Make select dropdown readable: dark background and light text for options */
+.form-grid select {
+  color: var(--text);
+  background-color: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+.form-grid select option,
+.form-grid select optgroup {
+  background-color: var(--panel-solid);
+  color: var(--text);
+}
+.form-grid select optgroup { color: var(--muted); }
+
+/* For browsers that support it, style the dropdown listbox */
+select::-ms-expand { display: inline-block; }
 .form-grid input[type="file"] {
   padding-left: 16px;
 }

@@ -16,4 +16,6 @@ const modems = [
     link: "chinamobile.html",
     available: true,
   },
+  { brand: "Nokia", model: "G1425GH", link: "nokia.html", available: true },
+  { brand: "Zimmlink", model: "ZL-2113X", link: "zimmlink.html", available: true },
 ];
